@@ -6,9 +6,7 @@
         double suma = 0,cant=0;   
         while (re == "s") {
             Console.WriteLine("Desea participar (s/n)?");
-            re = Console.ReadLine();
-            re = re.Trim();
-            re = re.ToLower();
+            re = Console.ReadLine().Trim().ToLower();
             if (re == "s") {
                 Console.WriteLine("Ingrese edad");
                 int edad = Convert.ToInt32(Console.ReadLine());
@@ -18,7 +16,10 @@
             
 
         }
-        double prom = suma / cant;
-        Console.WriteLine($"El promedio de {cant} edades es {prom}");
+        if (cant > 0)
+        {
+            double prom = suma / cant;
+            Console.WriteLine($"El promedio de {cant} edades es {prom}");
+        }
     }
 }
